@@ -1,0 +1,37 @@
+/* Tùy chỉnh In ấn và Định dạng Bảng */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    font-size: 11pt;
+  }
+  .print-page {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+@page {
+  size: A4 landscape;
+  margin: 10mm;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #1e293b;
+  padding: 4px 6px;
+  text-align: center;
+  font-size: 10pt;
+}
+
+.text-left {
+  text-align: left;
+}
