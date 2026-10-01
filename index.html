@@ -65,11 +65,14 @@
 
             <!-- Thông báo trạng thái -->
             <div class="text-xs font-semibold">
-                <template
-                    x-if="totals.totalQuestions === config.targetQuestions && Math.abs(totals.totalScore - 10) < 0.01">
+                <template x-if="totals.totalQuestions === config.targetQuestions &&
+          Math.abs(totals.totalScore - 10) < 0.01">
                     <span
                         class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1.5 rounded-full flex items-center gap-1.5">
-                        <i class="fa-solid fa-circle-check"></i> Đạt chuẩn {{config.targetQuestions}} câu & 10.00 điểm!
+                        <i class="fa-solid fa-circle-check"></i>
+                        Đạt chuẩn
+                        <span x-text="config.targetQuestions"></span>
+                        câu & 10.00 điểm!
                     </span>
                 </template>
                 <template
@@ -212,7 +215,7 @@
                                         <div class="grid grid-cols-3 gap-2">
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Biết (B)
+                                                    Biết
                                                 </label>
                                                 <input type="number" min="0" x-model.number="unit.mcq.b"
                                                     class="w-full border border-slate-300 rounded px-2 py-1.5 text-center">
@@ -220,7 +223,7 @@
 
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Hiểu (H)
+                                                    Hiểu
                                                 </label>
                                                 <input type="number" min="0" x-model.number="unit.mcq.h"
                                                     class="w-full border border-slate-300 rounded px-2 py-1.5 text-center">
@@ -228,7 +231,7 @@
 
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Vận dụng (VD)
+                                                    Vận dụng
                                                 </label>
                                                 <input type="number" min="0" x-model.number="unit.mcq.vd"
                                                     class="w-full border border-slate-300 rounded px-2 py-1.5 text-center">
@@ -245,7 +248,7 @@
                                         <div class="grid grid-cols-3 gap-2">
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Biết (B)
+                                                    Biết
                                                 </label>
                                                 <input type="number" min="0" x-model.number="unit.tf.b" placeholder="0"
                                                     class="w-full border border-slate-300 rounded px-2 py-1.5 text-center focus:outline-none focus:ring-2 focus:ring-blue-400">
@@ -253,7 +256,7 @@
 
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Hiểu (H)
+                                                    Hiểu
                                                 </label>
                                                 <input type="number" min="0" x-model.number="unit.tf.h" placeholder="0"
                                                     class="w-full border border-slate-300 rounded px-2 py-1.5 text-center focus:outline-none focus:ring-2 focus:ring-blue-400">
@@ -261,7 +264,7 @@
 
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Vận dụng (VD)
+                                                    Vận dụng
                                                 </label>
                                                 <input type="number" min="0" x-model.number="unit.tf.vd" placeholder="0"
                                                     class="w-full border border-slate-300 rounded px-2 py-1.5 text-center focus:outline-none focus:ring-2 focus:ring-blue-400">
@@ -279,7 +282,7 @@
                                         <div class="grid grid-cols-3 gap-2">
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Biết (B)
+                                                    Biết
                                                 </label>
                                                 <input type="number" min="0" x-model.number="unit.sa.b" placeholder="0"
                                                     class="w-full border border-slate-300 rounded px-2 py-1.5 text-center focus:outline-none focus:ring-2 focus:ring-blue-400">
@@ -287,7 +290,7 @@
 
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Hiểu (H)
+                                                    Hiểu
                                                 </label>
                                                 <input type="number" min="0" x-model.number="unit.sa.h" placeholder="0"
                                                     class="w-full border border-slate-300 rounded px-2 py-1.5 text-center focus:outline-none focus:ring-2 focus:ring-blue-400">
@@ -295,7 +298,7 @@
 
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Vận dụng (VD)
+                                                    Vận dụng
                                                 </label>
                                                 <input type="number" min="0" x-model.number="unit.sa.vd" placeholder="0"
                                                     class="w-full border border-slate-300 rounded px-2 py-1.5 text-center focus:outline-none focus:ring-2 focus:ring-blue-400">
@@ -313,7 +316,7 @@
                                         <div class="grid grid-cols-3 gap-2">
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Biết (B)
+                                                    Biết
                                                 </label>
                                                 <input type="number" min="0" step="0.25" x-model.number="unit.essay.b"
                                                     placeholder="0"
@@ -322,7 +325,7 @@
 
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Hiểu (H)
+                                                    Hiểu
                                                 </label>
                                                 <input type="number" min="0" step="0.25" x-model.number="unit.essay.h"
                                                     placeholder="0"
@@ -331,7 +334,7 @@
 
                                             <div>
                                                 <label class="block text-xs font-medium text-slate-500 mb-1">
-                                                    Vận dụng (VD)
+                                                    Vận dụng
                                                 </label>
                                                 <input type="number" min="0" step="0.25" x-model.number="unit.essay.vd"
                                                     placeholder="0"
@@ -370,7 +373,7 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                                 <div>
                                     <div class="flex justify-between items-center mb-1">
-                                        <label class="block text-xs font-semibold text-slate-600">Nhận biết (B)</label>
+                                        <label class="block text-xs font-semibold text-slate-600">Nhận biết</label>
                                         <button @click="applySpecTemplate(unit, 'b')"
                                             class="text-[11px] text-indigo-600 hover:underline">
                                             <i class="fa-solid fa-wand-magic-sparkles"></i> Mẫu chuẩn
@@ -381,7 +384,7 @@
                                 </div>
                                 <div>
                                     <div class="flex justify-between items-center mb-1">
-                                        <label class="block text-xs font-semibold text-slate-600">Thông hiểu (H)</label>
+                                        <label class="block text-xs font-semibold text-slate-600">Thông hiểu</label>
                                         <button @click="applySpecTemplate(unit, 'h')"
                                             class="text-[11px] text-indigo-600 hover:underline">
                                             <i class="fa-solid fa-wand-magic-sparkles"></i> Mẫu chuẩn
@@ -392,7 +395,7 @@
                                 </div>
                                 <div>
                                     <div class="flex justify-between items-center mb-1">
-                                        <label class="block text-xs font-semibold text-slate-600">Vận dụng (VD)</label>
+                                        <label class="block text-xs font-semibold text-slate-600">Vận dụng</label>
                                         <button @click="applySpecTemplate(unit, 'vd')"
                                             class="text-[11px] text-indigo-600 hover:underline">
                                             <i class="fa-solid fa-wand-magic-sparkles"></i> Mẫu chuẩn
@@ -423,7 +426,7 @@
                     </button>
                     <button @click="exportExamTemplate()"
                         class="px-3 py-1.5 bg-purple-600 text-white rounded text-xs hover:bg-purple-700 transition font-semibold">
-                        <i class="fa-solid fa-file-signature mr-1"></i> Xuất khung Khung Đề thi 40 câu (.doc)
+                        <i class="fa-solid fa-file-signature mr-1"></i> Xuất khung Đề thi (.doc)
                     </button>
                 </div>
             </div>
@@ -476,26 +479,35 @@
                                 <template x-for="(unit, uIndex) in topic.units" :key="unit.id">
                                     <tr>
                                         <td x-text="(tIndex + 1) + '.' + (uIndex + 1)"></td>
+
                                         <td class="text-left font-medium" x-text="unit.name"></td>
+
                                         <td x-text="unit.mcq.b || '-'"></td>
                                         <td x-text="unit.mcq.h || '-'"></td>
                                         <td x-text="unit.mcq.vd || '-'"></td>
+
                                         <td x-text="unit.tf.b || '-'"></td>
                                         <td x-text="unit.tf.h || '-'"></td>
                                         <td x-text="unit.tf.vd || '-'"></td>
+
                                         <td x-text="unit.sa.b || '-'"></td>
                                         <td x-text="unit.sa.h || '-'"></td>
                                         <td x-text="unit.sa.vd || '-'"></td>
+
                                         <td x-text="unit.essay.b || '-'"></td>
                                         <td x-text="unit.essay.h || '-'"></td>
                                         <td x-text="unit.essay.vd || '-'"></td>
+
                                         <td class="font-bold text-indigo-900"
-                                            x-text="calculateUnitScore(unit).toFixed(2)"></td>
+                                            x-text="calculateUnitScore(unit).toFixed(2)">
+                                        </td>
                                     </tr>
                                 </template>
                             </template>
+
+                            <!-- TỔNG -->
                             <tr class="font-bold bg-slate-100">
-                                <td colspan="2">TỔNG CỘNG</td>
+                                <td colspan="2">TỔNG SỐ CÂU</td>
                                 <td x-text="totals.mcq.b"></td>
                                 <td x-text="totals.mcq.h"></td>
                                 <td x-text="totals.mcq.vd"></td>
@@ -508,7 +520,36 @@
                                 <td x-text="totals.essay.b"></td>
                                 <td x-text="totals.essay.h"></td>
                                 <td x-text="totals.essay.vd"></td>
-                                <td class="text-indigo-900 text-sm" x-text="totals.totalScore.toFixed(2)"></td>
+                                <td class="text-indigo-900 text-sm" x-text="totals.totalQuestions.toFixed(2)">
+                                </td>
+                            </tr>
+
+                            <tr class="font-bold bg-slate-100">
+                                <td colspan="2">TỔNG SỐ ĐIỂM</td>
+                                <td x-text="totals.mcq.pointB.toFixed(2)"></td>
+                                <td x-text="totals.mcq.pointH.toFixed(2)"></td>
+                                <td x-text="totals.mcq.pointVD.toFixed(2)"></td>
+                                <td x-text="totals.tf.pointB.toFixed(2)"></td>
+                                <td x-text="totals.tf.pointH.toFixed(2)"></td>
+                                <td x-text="totals.tf.pointVD.toFixed(2)"></td>
+                                <td x-text="totals.sa.pointB.toFixed(2)"></td>
+                                <td x-text="totals.sa.pointH.toFixed(2)"></td>
+                                <td x-text="totals.sa.pointVD.toFixed(2)"></td>
+                                <td x-text="totals.essay.pointB.toFixed(2)"></td>
+                                <td x-text="totals.essay.pointH.toFixed(2)"></td>
+                                <td x-text="totals.essay.pointVD.toFixed(2)"></td>
+                                <td class="text-indigo-900 text-sm" x-text="totals.totalScore.toFixed(2)">
+                                </td>
+                            </tr>
+
+                            <tr class="font-bold bg-slate-100">
+                                <td colspan="2">TỶ LỆ%</td>
+                                <td colspan="3" x-text="totals.mcq.proportion"></td>
+                                <td colspan="3" x-text="totals.tf.proportion"></td>
+                                <td colspan="3" x-text="totals.sa.proportion"></td>
+                                <td colspan="3" x-text="totals.essay.proportion"></td>
+                                <td class="text-indigo-900 text-sm" x-text="totals.totalScoreProportion">
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -532,26 +573,61 @@
                                 <template x-for="(unit, uIndex) in topic.units" :key="unit.id">
                                     <tr>
                                         <td x-text="(tIndex + 1) + '.' + (uIndex + 1)"></td>
-                                        <td class="text-left font-semibold" x-text="unit.name"></td>
+
+                                        <td class="text-left font-semibold" x-text="unit.name">
+                                        </td>
+
                                         <td class="text-left font-medium">
                                             <div>Nhận biết</div>
                                             <div class="mt-2">Thông hiểu</div>
                                             <div class="mt-2">Vận dụng</div>
                                         </td>
+
                                         <td class="text-left">
                                             <div class="whitespace-pre-line"
-                                                x-text="unit.spec.b || 'Theo chuẩn GDPT 2018'"></div>
+                                                x-text="unit.spec.b || 'Theo chuẩn GDPT 2018'">
+                                            </div>
+
                                             <div class="whitespace-pre-line mt-2 pt-2 border-t border-slate-200"
-                                                x-text="unit.spec.h || 'Theo chuẩn GDPT 2018'"></div>
+                                                x-text="unit.spec.h || 'Theo chuẩn GDPT 2018'">
+                                            </div>
+
                                             <div class="whitespace-pre-line mt-2 pt-2 border-t border-slate-200"
-                                                x-text="unit.spec.vd || 'Theo chuẩn GDPT 2018'"></div>
+                                                x-text="unit.spec.vd || 'Theo chuẩn GDPT 2018'">
+                                            </div>
                                         </td>
-                                        <td>
-                                            <div x-text="'MCQ: ' + ((unit.mcq.b||0)+(unit.mcq.h||0)+(unit.mcq.vd||0))">
+
+                                        <td class="text-left">
+                                            <div>
+                                                MCQ:
+                                                <span x-text="(unit.mcq.b || 0) +
+                                    (unit.mcq.h || 0) +
+                                    (unit.mcq.vd || 0)">
+                                                </span>
                                             </div>
-                                            <div x-text="'Đ/S: ' + ((unit.tf.b||0)+(unit.tf.h||0)+(unit.tf.vd||0))">
+
+                                            <div>
+                                                Đ/S:
+                                                <span x-text="(unit.tf.b || 0) +
+                                    (unit.tf.h || 0) +
+                                    (unit.tf.vd || 0)">
+                                                </span>
                                             </div>
-                                            <div x-text="'TL ngắn: ' + ((unit.sa.b||0)+(unit.sa.h||0)+(unit.sa.vd||0))">
+
+                                            <div>
+                                                TL ngắn:
+                                                <span x-text="(unit.sa.b || 0) +
+                                    (unit.sa.h || 0) +
+                                    (unit.sa.vd || 0)">
+                                                </span>
+                                            </div>
+
+                                            <div>
+                                                Tự luận:
+                                                <span x-text="(unit.essay.b || 0) +
+                                    (unit.essay.h || 0) +
+                                    (unit.essay.vd || 0)">
+                                                </span>
                                             </div>
                                         </td>
                                     </tr>
